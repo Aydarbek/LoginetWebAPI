@@ -1,0 +1,31 @@
+INSERT INTO Users (Account, Email, FirstName, LastName, Occupation)
+VALUES 
+('jsmith', 'jsmiths@gmail.com', 'John', 'Smith', 'Geographer'),
+('alcarr', 'alcarr@gmail.com', 'Alex', 'Carr', 'Writer'),
+('zemelya777', 'dzemtsov@mail.ru', 'Dmitry', 'Zemtsov', 'Software Engineer'),
+('jango', 'jango@yahoo.com', 'Jango', '', 'Pathfinder'),
+('zupab', 'zupabbb@gmail.com', 'Boris', 'Zupa', 'Project Manager'),
+('ivanivan', 'ivangalaxy@yandex.ru', 'Ivan', 'Ivanov', 'Astronomer');
+
+
+
+INSERT INTO Albums (UserId, AlbumName, Description)
+VALUES
+(1, 'Peoples of Africa', 'description of the peoples inhabiting the African continent'),
+(1, 'Animals of South America', 'overview of the fauna of the South American continent'),
+(1, 'World Ocean', 'world ocean and its significance for the planet earth'),
+(2, 'Bestsellers of 1980s', 'best novels written in the 80s'),
+(2, 'Modern writers', 'portrait of a modern writer'),
+(2, 'Golden age', 'golden age in literature'),
+(3, 'Design Patterns', 'theory and practice of design patterns'),
+(3, 'OOP', 'Objective-oriented programming'),
+(3, 'ASP.NET Core', 'ASP.NET Core framework and its best practices'),
+(4, 'Animal Trails', 'Photos of animal trails and with description'),
+(4, 'Best photos', 'Best photos of nature'),
+(4, 'Maps of Australia', 'Detailed maps of Australia'),
+(5, 'SCRUM', 'SCRUM Metodology and its best practices'),
+(5, 'Canban', 'Canban Metodology and its best practices'),
+(5, 'Best cases', 'Interesting project management cases'),
+(6, 'Black holes', 'Theory of black holes'),
+(6, 'Saturn rings', 'results of observations of the rings of Saturn'),
+(6, 'Best photos', 'Best space photos');
