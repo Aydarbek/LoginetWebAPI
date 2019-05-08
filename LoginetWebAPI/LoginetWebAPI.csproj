@@ -7,6 +7,8 @@
   <ItemGroup>
     <Compile Remove="Migrations\20190507120648_InitialDB.cs" />
     <Compile Remove="Migrations\20190507120648_InitialDB.Designer.cs" />
+    <Compile Remove="Migrations\20190507175119_LoginetDBv2.cs" />
+    <Compile Remove="Migrations\20190507175119_LoginetDBv2.Designer.cs" />
   </ItemGroup>
 
   <ItemGroup>
@@ -22,6 +24,7 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
     </PackageReference>
     <PackageReference Include="Microsoft.PowerShell.CoreCLR.Eventing" Version="6.2.0" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.1.1" />
   </ItemGroup>
 
 </Project>
