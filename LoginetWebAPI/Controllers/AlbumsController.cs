@@ -9,7 +9,7 @@ using LoginetWebAPI.Models;
 
 namespace LoginetWebAPI.Controllers
 {
-    [Route("[controller]/[action]")]
+    [Route("ef/[controller]/[action]")]
     [ApiController]
     public class AlbumsController : ControllerBase
     {
@@ -22,12 +22,19 @@ namespace LoginetWebAPI.Controllers
 
 
         [HttpGet]
+        [FormatFilter]
         public async Task<IActionResult> GetAll()
         {
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
 
-            IEnumerable<Album> Albums = await _context.Albums.ToListAsync();
+            IEnumerable<AlbumDataModel> Albums = await _context.Albums.Select(a => new AlbumDataModel
+            {
+                Id = a.Id,
+                UserId = a.UserId,
+                AlbumName = a.AlbumName,
+                Description = a.Description
+            }).ToListAsync();
 
             if (Albums == null | Albums.Count() == 0)
                 return NotFound();
@@ -37,12 +44,19 @@ namespace LoginetWebAPI.Controllers
 
         
         [HttpGet("{id}")]
+        [FormatFilter]
         public async Task<IActionResult> Get([FromRoute] int id)
         {
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
 
-            var Album = await _context.Albums.FindAsync(id);
+            IEnumerable<AlbumDataModel> Album = await _context.Albums.Where(a => a.Id == id).Select(a => new AlbumDataModel
+            {
+                Id = a.Id,
+                UserId = a.UserId,
+                AlbumName = a.AlbumName,
+                Description = a.Description
+            }).ToListAsync();
 
             if (Album == null)
                 return NotFound();
@@ -52,9 +66,16 @@ namespace LoginetWebAPI.Controllers
 
 
         [HttpGet("{id}")]
+        [FormatFilter]
         public async Task<IActionResult> OfUser([FromRoute] int id)
         {
-            IEnumerable<Album> Albums = await _context.Albums.Where(a => a.UserId == id).ToListAsync();
+            IEnumerable<AlbumDataModel> Albums = await _context.Albums.Where(a => a.UserId == id).Select(a => new AlbumDataModel
+            {
+                Id = a.Id,
+                UserId = a.UserId,
+                AlbumName = a.AlbumName,
+                Description = a.Description
+            }).ToListAsync();
 
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);

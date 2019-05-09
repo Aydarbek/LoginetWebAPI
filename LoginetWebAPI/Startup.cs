@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http.Headers;
 using System.Threading.Tasks;
 using LoginetWebAPI.Models;
 using Microsoft.AspNetCore.Builder;
@@ -30,8 +31,11 @@ namespace LoginetWebAPI
         {
             string Connection = Configuration.GetConnectionString("DefaultConnection");
             services.AddDbContext<DBContext>(options => options.UseSqlServer(Connection));
-            services.AddRouting();
-
+            services.AddMvc().
+                AddXmlDataContractSerializerFormatters().
+                AddMvcOptions(opts => {
+                opts.FormatterMappings.SetMediaTypeMappingForFormat("xml", new MediaTypeHeaderValue("application/xml").ToString());
+            });
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }
 

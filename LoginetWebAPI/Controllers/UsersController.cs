@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore;
 namespace LoginetWebAPI.Controllers
 {
 
-    [Route("[controller]/[action]")]
+    [Route("ef/[controller]/[action]")]
     [ApiController]
     public class UsersController : ControllerBase
     {
@@ -21,6 +21,7 @@ namespace LoginetWebAPI.Controllers
         }
 
         [HttpGet]
+        [FormatFilter]
         public async Task<IActionResult> GetAll()
         {
             if (!ModelState.IsValid)
@@ -36,6 +37,7 @@ namespace LoginetWebAPI.Controllers
 
 
         [HttpGet("{id}")]
+        [FormatFilter]
         public async Task<IActionResult> Get(int id)
         {
             if (!ModelState.IsValid)
