@@ -11,3 +11,4 @@ D:\Projects\ASP.NET CORE\LoginetWebAPI\LoginetWebAPI\obj\Debug\netcoreapp2.1\Log
 D:\Projects\ASP.NET CORE\LoginetWebAPI\LoginetWebAPI\bin\Debug\netcoreapp2.1\LoginetWebAPI.pdb
 D:\Projects\ASP.NET CORE\LoginetWebAPI\LoginetWebAPI\obj\Debug\netcoreapp2.1\LoginetWebAPI.dll
 D:\Projects\ASP.NET CORE\LoginetWebAPI\LoginetWebAPI\obj\Debug\netcoreapp2.1\LoginetWebAPI.pdb
+D:\Projects\ASP.NET CORE\LoginetWebAPI\LoginetWebAPI\obj\Debug\netcoreapp2.1\LoginetWebAPI.csprojAssemblyReference.cache

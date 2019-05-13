@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace LoginetWebAPI.Models
 {
-    public class AlbumDataModel
+    public class AlbumModel
     {
         public int Id { get; set; }
 

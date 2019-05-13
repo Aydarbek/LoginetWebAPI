@@ -28,7 +28,7 @@ namespace LoginetWebAPI.Controllers
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
 
-            IEnumerable<AlbumDataModel> Albums = await _context.Albums.Select(a => new AlbumDataModel
+            IEnumerable<AlbumModel> Albums = await _context.Albums.Select(a => new AlbumModel
             {
                 Id = a.Id,
                 UserId = a.UserId,
@@ -50,7 +50,7 @@ namespace LoginetWebAPI.Controllers
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
 
-            IEnumerable<AlbumDataModel> Album = await _context.Albums.Where(a => a.Id == id).Select(a => new AlbumDataModel
+            IEnumerable<AlbumModel> Album = await _context.Albums.Where(a => a.Id == id).Select(a => new AlbumModel
             {
                 Id = a.Id,
                 UserId = a.UserId,
@@ -69,7 +69,7 @@ namespace LoginetWebAPI.Controllers
         [FormatFilter]
         public async Task<IActionResult> OfUser([FromRoute] int id)
         {
-            IEnumerable<AlbumDataModel> Albums = await _context.Albums.Where(a => a.UserId == id).Select(a => new AlbumDataModel
+            IEnumerable<AlbumModel> Albums = await _context.Albums.Where(a => a.UserId == id).Select(a => new AlbumModel
             {
                 Id = a.Id,
                 UserId = a.UserId,
