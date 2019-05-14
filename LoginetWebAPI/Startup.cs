@@ -31,6 +31,7 @@ namespace LoginetWebAPI
         {
             string Connection = Configuration.GetConnectionString("DefaultConnection");
             services.AddDbContext<DBContext>(options => options.UseSqlServer(Connection));
+            services.AddSingleton<IDataContext, JsonContext>();
             services.AddMvc().
                 AddXmlDataContractSerializerFormatters().
                 AddMvcOptions(opts => {
@@ -38,6 +39,12 @@ namespace LoginetWebAPI
             });
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }
+
+
+
+
+
+
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)

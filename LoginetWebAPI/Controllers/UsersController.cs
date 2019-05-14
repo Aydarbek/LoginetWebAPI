@@ -15,7 +15,7 @@ namespace LoginetWebAPI.Controllers
     {
         private readonly IDataContext _dataContext;
 
-        public UsersController(DBContext dataContext)
+        public UsersController(IDataContext dataContext)
         {
             _dataContext = dataContext;
         }
@@ -27,7 +27,7 @@ namespace LoginetWebAPI.Controllers
             if (!ModelState.IsValid)
                 return BadRequest();
 
-            IEnumerable<User> Users = await _dataContext.GetAllUsers();
+            IEnumerable<UserModel> Users = await _dataContext.GetAllUsers();
 
             if (Users == null | Users.Count() == 0)
                 return NotFound();
@@ -43,7 +43,7 @@ namespace LoginetWebAPI.Controllers
             if (!ModelState.IsValid)
                 return BadRequest();
 
-            User User = await _dataContext.GetUser(id);            
+            UserModel User = await _dataContext.GetUser(id);            
             
             if (User == null)
                 return NotFound();

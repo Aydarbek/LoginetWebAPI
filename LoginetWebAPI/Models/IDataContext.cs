@@ -7,8 +7,8 @@ namespace LoginetWebAPI.Models
 {
     public interface IDataContext
     {
-        Task<User> GetUser(int id);
-        Task<IEnumerable<User>> GetAllUsers();
+        Task<UserModel> GetUser(int id);
+        Task<IEnumerable<UserModel>> GetAllUsers();
         Task<IEnumerable<AlbumModel>> GetAllAlbums();
         Task<AlbumModel> GetAlbum(int id);
         Task<IEnumerable<AlbumModel>> GetAlbumsOfUser(int id);

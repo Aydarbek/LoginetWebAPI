@@ -13,21 +13,38 @@ namespace LoginetWebAPI.Models
         public DbSet<Album> Albums { get; set; }
 
 
-        public async Task<User>  GetUser(int id)
+        public async Task<UserModel>  GetUser(int id)
         {
-            User User = await Users.FindAsync(id);
-            return User;
+            User user = await Users.FindAsync(id);
+            UserModel userModel = new UserModel
+            {
+                Id = user.Id,
+                Account = user.Account,
+                Email = user.Email,
+                FirstName = user.FirstName,
+                LastName = user.LastName,
+                Occupation = user.Occupation
+            };
+            return userModel;
         }
 
-        public async Task<IEnumerable<User>> GetAllUsers()
+        public async Task<IEnumerable<UserModel>> GetAllUsers()
         {
-            IEnumerable<User> users = await Users.ToListAsync<User>();
-            return Users;
+            IEnumerable<UserModel> usersModel = await Users.Select(u => new UserModel {
+                Id = u.Id,
+                Account = u.Account,
+                Email = u.Email,
+                FirstName = u.FirstName,
+                LastName = u.LastName,
+                Occupation = u.Occupation
+            }).ToListAsync<UserModel>();
+
+            return usersModel;
         }
 
         public async Task<IEnumerable<AlbumModel>> GetAllAlbums()
         {
-            IEnumerable<AlbumModel> albums = await Albums.Select(a => new AlbumModel
+            IEnumerable<AlbumModel> albumsModel = await Albums.Select(a => new AlbumModel
             {
                 Id = a.Id,
                 UserId = a.UserId,
@@ -35,7 +52,7 @@ namespace LoginetWebAPI.Models
                 Description = a.Description
             }).ToListAsync();
 
-            return albums;
+            return albumsModel;
         }
 
 
@@ -66,7 +83,5 @@ namespace LoginetWebAPI.Models
 
             return albumsModel;
         }
-
-
     }
 }
