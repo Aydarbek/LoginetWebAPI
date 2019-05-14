@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore;
 namespace LoginetWebAPI.Controllers
 {
 
-    [Route("ef/[controller]/[action]")]
+    [Route("[controller]/[action]")]
     [ApiController]
     public class UsersController : ControllerBase
     {

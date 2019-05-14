@@ -4,11 +4,13 @@ using System.Linq;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
 using System.Net.Http;
+using Microsoft.Extensions.Configuration;
 
 namespace LoginetWebAPI.Models
 {
     public class JsonContext : IDataContext
-    {
+    {   
+        
         readonly Uri UsersUri = new Uri("https://my-json-server.typicode.com/Aydarbek/MyJSON/users");
         readonly Uri AlbumsUri = new Uri("https://my-json-server.typicode.com/Aydarbek/MyJSON/albums");
 
@@ -42,20 +44,40 @@ namespace LoginetWebAPI.Models
             }
         }
 
-        public Task<IEnumerable<AlbumModel>> GetAllAlbums()
+        public async Task<IEnumerable<AlbumModel>> GetAllAlbums()
         {
-            throw new NotImplementedException();
+            using (HttpClient client = new HttpClient())
+            {
+                string AlbumsJson = await client.GetStringAsync(AlbumsUri);
+                IEnumerable<AlbumModel> Albums = await Task.Run(() => JsonConvert.DeserializeObject<IEnumerable<AlbumModel>>(AlbumsJson));
+
+                return Albums;
+            }
         }
 
 
-        public Task<AlbumModel> GetAlbum(int id)
+        public async Task<AlbumModel> GetAlbum(int id)
         {
-            throw new NotImplementedException();
+            using (HttpClient client = new HttpClient())
+            {
+                string AlbumsJson = await client.GetStringAsync(AlbumsUri);
+                AlbumModel Album = await Task.Run(() => JsonConvert.DeserializeObject<IEnumerable<AlbumModel>>(AlbumsJson).FirstOrDefault(u => u.Id == id));
+
+                return Album;
+            }
         }
 
-        public Task<IEnumerable<AlbumModel>> GetAlbumsOfUser(int id)
+        public async Task<IEnumerable<AlbumModel>> GetAlbumsOfUser(int id)
         {
-            throw new NotImplementedException();
+            using (HttpClient client = new HttpClient())
+            {
+                string AlbumsJson = await client.GetStringAsync(AlbumsUri);
+
+                IEnumerable<AlbumModel> Albums = await Task.Run(() => JsonConvert.DeserializeObject<IEnumerable<AlbumModel>>(AlbumsJson)
+                    .Where(a => a.UserId == id).ToList<AlbumModel>());
+
+                return Albums;
+            }
         }
 
 
