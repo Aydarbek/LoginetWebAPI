@@ -1,0 +1,17 @@
+D:\Projects\ASP.NET CORE\LoginetWebAPI\LoginetWebAPI.Tests\bin\Debug\netcoreapp2.2\xunit.runner.visualstudio.dotnetcore.testadapter.dll
+D:\Projects\ASP.NET CORE\LoginetWebAPI\LoginetWebAPI.Tests\bin\Debug\netcoreapp2.2\xunit.runner.reporters.netcoreapp10.dll
+D:\Projects\ASP.NET CORE\LoginetWebAPI\LoginetWebAPI.Tests\bin\Debug\netcoreapp2.2\xunit.runner.utility.netcoreapp10.dll
+D:\Projects\ASP.NET CORE\LoginetWebAPI\LoginetWebAPI.Tests\bin\Debug\netcoreapp2.2\LoginetWebAPI.Tests.deps.json
+D:\Projects\ASP.NET CORE\LoginetWebAPI\LoginetWebAPI.Tests\bin\Debug\netcoreapp2.2\LoginetWebAPI.Tests.runtimeconfig.json
+D:\Projects\ASP.NET CORE\LoginetWebAPI\LoginetWebAPI.Tests\bin\Debug\netcoreapp2.2\LoginetWebAPI.Tests.runtimeconfig.dev.json
+D:\Projects\ASP.NET CORE\LoginetWebAPI\LoginetWebAPI.Tests\bin\Debug\netcoreapp2.2\LoginetWebAPI.Tests.dll
+D:\Projects\ASP.NET CORE\LoginetWebAPI\LoginetWebAPI.Tests\obj\Debug\netcoreapp2.2\LoginetWebAPI.Tests.csprojAssemblyReference.cache
+D:\Projects\ASP.NET CORE\LoginetWebAPI\LoginetWebAPI.Tests\obj\Debug\netcoreapp2.2\LoginetWebAPI.Tests.csproj.CoreCompileInputs.cache
+D:\Projects\ASP.NET CORE\LoginetWebAPI\LoginetWebAPI.Tests\obj\Debug\netcoreapp2.2\LoginetWebAPI.Tests.AssemblyInfoInputs.cache
+D:\Projects\ASP.NET CORE\LoginetWebAPI\LoginetWebAPI.Tests\obj\Debug\netcoreapp2.2\LoginetWebAPI.Tests.AssemblyInfo.cs
+D:\Projects\ASP.NET CORE\LoginetWebAPI\LoginetWebAPI.Tests\bin\Debug\netcoreapp2.2\LoginetWebAPI.dll
+D:\Projects\ASP.NET CORE\LoginetWebAPI\LoginetWebAPI.Tests\bin\Debug\netcoreapp2.2\LoginetWebAPI.pdb
+D:\Projects\ASP.NET CORE\LoginetWebAPI\LoginetWebAPI.Tests\obj\Debug\netcoreapp2.2\LoginetWebAPI.Tests.csproj.CopyComplete
+D:\Projects\ASP.NET CORE\LoginetWebAPI\LoginetWebAPI.Tests\bin\Debug\netcoreapp2.2\LoginetWebAPI.Tests.pdb
+D:\Projects\ASP.NET CORE\LoginetWebAPI\LoginetWebAPI.Tests\obj\Debug\netcoreapp2.2\LoginetWebAPI.Tests.dll
+D:\Projects\ASP.NET CORE\LoginetWebAPI\LoginetWebAPI.Tests\obj\Debug\netcoreapp2.2\LoginetWebAPI.Tests.pdb

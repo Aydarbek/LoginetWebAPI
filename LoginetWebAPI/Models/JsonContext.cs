@@ -49,9 +49,9 @@ namespace LoginetWebAPI.Models
             using (HttpClient client = new HttpClient())
             {
                 string AlbumsJson = await client.GetStringAsync(AlbumsUri);
-                IEnumerable<AlbumModel> Albums = await Task.Run(() => JsonConvert.DeserializeObject<IEnumerable<AlbumModel>>(AlbumsJson));
+                IEnumerable<AlbumModel> AlbumsModel = await Task.Run(() => JsonConvert.DeserializeObject<IEnumerable<AlbumModel>>(AlbumsJson));
 
-                return Albums;
+                return AlbumsModel;
             }
         }
 
@@ -61,9 +61,9 @@ namespace LoginetWebAPI.Models
             using (HttpClient client = new HttpClient())
             {
                 string AlbumsJson = await client.GetStringAsync(AlbumsUri);
-                AlbumModel Album = await Task.Run(() => JsonConvert.DeserializeObject<IEnumerable<AlbumModel>>(AlbumsJson).FirstOrDefault(u => u.Id == id));
+                AlbumModel AlbumModel = await Task.Run(() => JsonConvert.DeserializeObject<IEnumerable<AlbumModel>>(AlbumsJson).FirstOrDefault(u => u.Id == id));
 
-                return Album;
+                return AlbumModel;
             }
         }
 
@@ -73,10 +73,10 @@ namespace LoginetWebAPI.Models
             {
                 string AlbumsJson = await client.GetStringAsync(AlbumsUri);
 
-                IEnumerable<AlbumModel> Albums = await Task.Run(() => JsonConvert.DeserializeObject<IEnumerable<AlbumModel>>(AlbumsJson)
+                IEnumerable<AlbumModel> AlbumsModel = await Task.Run(() => JsonConvert.DeserializeObject<IEnumerable<AlbumModel>>(AlbumsJson)
                     .Where(a => a.UserId == id).ToList<AlbumModel>());
 
-                return Albums;
+                return AlbumsModel;
             }
         }
 

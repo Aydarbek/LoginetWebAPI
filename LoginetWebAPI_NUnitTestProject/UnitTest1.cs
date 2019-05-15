@@ -1,5 +1,6 @@
 using NUnit.Framework;
-using LoginetWebAPI;
+using LoginetWebAPI.Controllers;
+using LoginetWebAPI.Models;
 
 namespace Tests
 {
