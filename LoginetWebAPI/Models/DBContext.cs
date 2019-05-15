@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace LoginetWebAPI.Models
 {
-    public class DBContext : DbContext, IDataContext
+    public class DBContext : DbContext
     {
         public DBContext (DbContextOptions<DBContext> options) : base(options) { }
         public DbSet<User> Users { get; set; }

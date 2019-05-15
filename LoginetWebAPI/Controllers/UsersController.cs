@@ -22,12 +22,12 @@ namespace LoginetWebAPI.Controllers
 
         [HttpGet]
         [FormatFilter]
-        public async Task<IActionResult> GetAll()
+        public IActionResult GetAll()
         {
             if (!ModelState.IsValid)
                 return BadRequest();
 
-            IEnumerable<UserModel> Users = await _dataContext.GetAllUsers();
+            var Users = _dataContext.Users;
 
             if (Users == null | Users.Count() == 0)
                 return NotFound();
@@ -38,20 +38,17 @@ namespace LoginetWebAPI.Controllers
 
         [HttpGet("{id}")]
         [FormatFilter]
-        public async Task<IActionResult> Get(int id)
+        public IActionResult Get(int id)
         {
             if (!ModelState.IsValid)
                 return BadRequest();
 
-            UserModel User = await _dataContext.GetUser(id);            
+            User User = _dataContext.Users.FirstOrDefault(u => u.Id == id);            
             
             if (User == null)
                 return NotFound();
 
             return Ok(User);
         }
-
-
-
     }
 }

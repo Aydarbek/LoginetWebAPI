@@ -13,59 +13,78 @@ namespace LoginetWebAPI.Controllers
     [ApiController]
     public class AlbumsController : ControllerBase
     {
-        private readonly IDataContext _context;
+        private readonly IDataContext _dataContext;
 
-        public AlbumsController(IDataContext context)
+        public AlbumsController(IDataContext dataContext)
         {
-            _context = context;
+            _dataContext = dataContext;
         }
 
 
         [HttpGet]
         [FormatFilter]
-        public async Task<IActionResult> GetAll()
+        public IActionResult GetAll()
         {
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
 
-            IEnumerable<AlbumModel> Albums = await _context.GetAllAlbums();
-
-            if (Albums == null | Albums.Count() == 0)
+            IEnumerable<AlbumModel> albumsModel = _dataContext.Albums.Select(a => new AlbumModel
+            {
+                Id = a.Id,
+                UserId = a.UserId,
+                AlbumName = a.AlbumName,
+                Description = a.Description
+            }).ToList();
+    
+            if (albumsModel == null | albumsModel.Count() == 0)
                 return NotFound();
 
-            return Ok(Albums);
+            return Ok(albumsModel);
         }
 
         
         [HttpGet("{id}")]
         [FormatFilter]
-        public async Task<IActionResult> Get([FromRoute] int id)
+        public IActionResult Get(int id)
         {
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
 
-            AlbumModel Album = await _context.GetAlbum(id);
+            Album album = _dataContext.Albums.FirstOrDefault(a => a.Id == id);
+            AlbumModel albumModel = new AlbumModel
+            {
+                Id = album.Id,
+                UserId = album.UserId,
+                AlbumName = album.AlbumName,
+                Description = album.Description
+            };
 
-            if (Album == null)
+            if (albumModel == null)
                 return NotFound();
 
-            return Ok(Album);
+            return Ok(albumModel);
         }
 
 
         [HttpGet("{id}")]
         [FormatFilter]
-        public async Task<IActionResult> OfUser([FromRoute] int id)
+        public IActionResult OfUser(int id)
         {
-            IEnumerable<AlbumModel> Albums = await _context.GetAlbumsOfUser(id);
+            IEnumerable<AlbumModel> albumsModel = _dataContext.Albums.Where(a => a.UserId == id).Select(a => new AlbumModel
+            {
+                Id = a.Id,
+                UserId = a.UserId,
+                AlbumName = a.AlbumName,
+                Description = a.Description
+            }).ToList();
 
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
 
-            if (Albums == null | Albums.Count() == 0)
+            if (albumsModel == null | albumsModel.Count() == 0)
                 return NotFound();
 
-            return Ok(Albums);
+            return Ok(albumsModel);
         }
     }
 }

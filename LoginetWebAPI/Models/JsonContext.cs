@@ -8,81 +8,43 @@ using Microsoft.Extensions.Configuration;
 
 namespace LoginetWebAPI.Models
 {
-    public class JsonContext : IDataContext
+    public class JsonContext: IDataContext
     {   
         
         readonly Uri UsersUri = new Uri("https://my-json-server.typicode.com/Aydarbek/MyJSON/users");
         readonly Uri AlbumsUri = new Uri("https://my-json-server.typicode.com/Aydarbek/MyJSON/albums");
 
+        public IEnumerable<User> Users
+        {
+            get { return GetUsers().Result; }
+        }
 
-        public async Task<IEnumerable<UserModel>> GetAllUsers()
+        public IEnumerable<Album> Albums
+        {
+            get { return GetAlbums().Result; }
+        } 
+
+
+        public async Task<IEnumerable<User>> GetUsers()
         {
             using (HttpClient client = new HttpClient())
             {
-                string UsersJson = await client.GetStringAsync(UsersUri);
-                IEnumerable<UserModel> UsersModel = await Task.Run(() => JsonConvert.DeserializeObject<IEnumerable<UserModel>>(UsersJson));
-                return UsersModel;
+                string usersJson = await client.GetStringAsync(UsersUri);
+                IEnumerable<User> Users = JsonConvert.DeserializeObject<IEnumerable<User>>(usersJson);
+                return Users;
             }
         }
 
-        public async Task<UserModel> GetUser(int id)
-        {
-            using (HttpClient client = new HttpClient())
-            {            
-                string UsersJson = await client.GetStringAsync(UsersUri);
-                User user = await Task.Run(() => JsonConvert.DeserializeObject<IEnumerable<User>>(UsersJson).FirstOrDefault(u => u.Id == id));
-                UserModel userModel = new UserModel
-                {
-                    Id = user.Id,
-                    Account = user.Account,
-                    Email = user.Email,
-                    FirstName = user.FirstName,
-                    LastName = user.LastName,
-                    Occupation = user.Occupation
-                };
-                return userModel;
-            }
-        }
 
-        public async Task<IEnumerable<AlbumModel>> GetAllAlbums()
+        public async Task<IEnumerable<Album>> GetAlbums()
         {
             using (HttpClient client = new HttpClient())
             {
-                string AlbumsJson = await client.GetStringAsync(AlbumsUri);
-                IEnumerable<AlbumModel> AlbumsModel = await Task.Run(() => JsonConvert.DeserializeObject<IEnumerable<AlbumModel>>(AlbumsJson));
-
-                return AlbumsModel;
+                string albumsJson = await client.GetStringAsync(AlbumsUri);
+                IEnumerable<Album> Albums = JsonConvert.DeserializeObject<IEnumerable<Album>>(albumsJson);
+                return Albums;
             }
         }
-
-
-        public async Task<AlbumModel> GetAlbum(int id)
-        {
-            using (HttpClient client = new HttpClient())
-            {
-                string AlbumsJson = await client.GetStringAsync(AlbumsUri);
-                AlbumModel AlbumModel = await Task.Run(() => JsonConvert.DeserializeObject<IEnumerable<AlbumModel>>(AlbumsJson).FirstOrDefault(u => u.Id == id));
-
-                return AlbumModel;
-            }
-        }
-
-        public async Task<IEnumerable<AlbumModel>> GetAlbumsOfUser(int id)
-        {
-            using (HttpClient client = new HttpClient())
-            {
-                string AlbumsJson = await client.GetStringAsync(AlbumsUri);
-
-                IEnumerable<AlbumModel> AlbumsModel = await Task.Run(() => JsonConvert.DeserializeObject<IEnumerable<AlbumModel>>(AlbumsJson)
-                    .Where(a => a.UserId == id).ToList<AlbumModel>());
-
-                return AlbumsModel;
-            }
-        }
-
-
-
- 
 
     }
 }
