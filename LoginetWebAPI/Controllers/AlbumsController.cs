@@ -51,18 +51,24 @@ namespace LoginetWebAPI.Controllers
                 return BadRequest(ModelState);
 
             Album album = _dataContext.Albums.FirstOrDefault(a => a.Id == id);
-            AlbumModel albumModel = new AlbumModel
+
+            if (album != null)
             {
-                Id = album.Id,
-                UserId = album.UserId,
-                AlbumName = album.AlbumName,
-                Description = album.Description
-            };
+                AlbumModel albumModel = new AlbumModel
+                {
+                    Id = album.Id,
+                    UserId = album.UserId,
+                    AlbumName = album.AlbumName,
+                    Description = album.Description
+                };
 
-            if (albumModel == null)
+                return Ok(albumModel);
+            }
+            else
+            {
                 return NotFound();
+            }
 
-            return Ok(albumModel);
         }
 
 
@@ -70,7 +76,8 @@ namespace LoginetWebAPI.Controllers
         [FormatFilter]
         public IActionResult OfUser(int id)
         {
-            IEnumerable<AlbumModel> albumsModel = _dataContext.Albums.Where(a => a.UserId == id).Select(a => new AlbumModel
+            IEnumerable<AlbumModel> albumsModel = _dataContext.Albums.Where(a => a.UserId == id)
+            .Select(a => new AlbumModel
             {
                 Id = a.Id,
                 UserId = a.UserId,

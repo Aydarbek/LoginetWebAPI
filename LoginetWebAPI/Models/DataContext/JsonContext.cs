@@ -9,10 +9,10 @@ using Microsoft.Extensions.Configuration;
 namespace LoginetWebAPI.Models
 {
     public class JsonContext: IDataContext
-    {   
-        
-        readonly Uri UsersUri = new Uri("https://my-json-server.typicode.com/Aydarbek/MyJSON/users");
-        readonly Uri AlbumsUri = new Uri("https://my-json-server.typicode.com/Aydarbek/MyJSON/albums");
+    {
+
+        internal Uri UsersUri = new Uri("https://my-json-server.typicode.com/Aydarbek/MyJSON/users");
+        internal Uri AlbumsUri = new Uri("https://my-json-server.typicode.com/Aydarbek/MyJSON/albums");
 
         public IEnumerable<User> Users
         {

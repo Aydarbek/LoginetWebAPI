@@ -32,7 +32,8 @@ namespace LoginetWebAPI
         {
             string Connection = Configuration.GetConnectionString("DefaultConnection");
             services.AddDbContext<DBContext>(options => options.UseSqlServer(Connection));
-            services.AddScoped<IDataContext, JsonContext>();
+            services.AddScoped<IDataContext, JsonContext>();           
+                
             services.AddMvc().
                 AddXmlDataContractSerializerFormatters().
                 AddMvcOptions(opts => {
