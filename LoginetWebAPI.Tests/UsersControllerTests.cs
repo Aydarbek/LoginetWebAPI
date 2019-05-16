@@ -22,7 +22,7 @@ namespace LoginetWebAPI.Tests
             //Setup
             Mock<IDataContext> mock = new Mock<IDataContext>();
             mock.Setup(context => context.Users).Returns(GetUsersList());
-            UsersController usersController = new UsersController(mock.Object);
+            JsonUsersController usersController = new JsonUsersController(mock.Object);
 
             //Action
             IActionResult result = usersController.GetAll();
@@ -40,7 +40,7 @@ namespace LoginetWebAPI.Tests
             //Setup
             Mock<IDataContext> mock = new Mock<IDataContext>();
             mock.Setup(context => context.Users).Returns(GetUsersList());
-            UsersController usersController = new UsersController(mock.Object);
+            JsonUsersController usersController = new JsonUsersController(mock.Object);
 
             //Action
             IActionResult result = usersController.Get(5);
@@ -59,7 +59,7 @@ namespace LoginetWebAPI.Tests
             //Setup
             Mock<IDataContext> mock = new Mock<IDataContext>();
             mock.Setup(context => context.Users).Returns(GetUsersList());
-            UsersController usersController = new UsersController(mock.Object);
+            JsonUsersController usersController = new JsonUsersController(mock.Object);
 
             //Action
             IActionResult result = usersController.Get(6);

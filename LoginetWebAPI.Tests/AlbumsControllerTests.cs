@@ -21,7 +21,7 @@ namespace LoginetWebAPI.Tests
             //Setup
             Mock<IDataContext> mock = new Mock<IDataContext>();
             mock.Setup(context => context.Albums).Returns(GetAlbumsList());
-            AlbumsController albumsController = new AlbumsController(mock.Object);
+            JsonAlbumsController albumsController = new JsonAlbumsController(mock.Object);
 
             //Action
             IActionResult result = albumsController.GetAll();
@@ -39,7 +39,7 @@ namespace LoginetWebAPI.Tests
             //Setup
             Mock<IDataContext> mock = new Mock<IDataContext>();
             mock.Setup(context => context.Albums).Returns(GetAlbumsList());
-            AlbumsController albumsController = new AlbumsController(mock.Object);
+            JsonAlbumsController albumsController = new JsonAlbumsController(mock.Object);
 
             //Action
             IActionResult result = albumsController.Get(1);
@@ -57,7 +57,7 @@ namespace LoginetWebAPI.Tests
             //Setup
             Mock<IDataContext> mock = new Mock<IDataContext>();
             mock.Setup(context => context.Albums).Returns(GetAlbumsList());
-            AlbumsController albumsController = new AlbumsController(mock.Object);
+            JsonAlbumsController albumsController = new JsonAlbumsController(mock.Object);
 
             //Action
             IActionResult result = albumsController.Get(10);
@@ -74,7 +74,7 @@ namespace LoginetWebAPI.Tests
             //Setup
             Mock<IDataContext> mock = new Mock<IDataContext>();
             mock.Setup(context => context.Albums).Returns(GetAlbumsList());
-            AlbumsController albumsController = new AlbumsController(mock.Object);
+            JsonAlbumsController albumsController = new JsonAlbumsController(mock.Object);
 
             //Action
             IActionResult result = albumsController.OfUser(1);
@@ -92,7 +92,7 @@ namespace LoginetWebAPI.Tests
             //Setup
             Mock<IDataContext> mock = new Mock<IDataContext>();
             mock.Setup(context => context.Albums).Returns(GetAlbumsList());
-            AlbumsController albumsController = new AlbumsController(mock.Object);
+            JsonAlbumsController albumsController = new JsonAlbumsController(mock.Object);
 
             //Action
             IActionResult result = albumsController.OfUser(10);

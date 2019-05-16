@@ -9,13 +9,13 @@ using Microsoft.EntityFrameworkCore;
 namespace LoginetWebAPI.Controllers
 {
 
-    [Route("[controller]/[action]")]
+    [Route("loginetapi/[controller]/[action]")]
     [ApiController]
-    public class UsersController : ControllerBase
+    public class JsonUsersController : ControllerBase
     {
         private IDataContext _dataContext;
 
-        public UsersController(IDataContext dataContext)
+        public JsonUsersController(IDataContext dataContext)
         {
             _dataContext = dataContext;
         }

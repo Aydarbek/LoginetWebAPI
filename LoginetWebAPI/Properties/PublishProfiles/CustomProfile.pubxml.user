@@ -7,7 +7,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
   <PropertyGroup>
     <TimeStampOfAssociatedLegacyPublishXmlFile />
     <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAASuH/EbFeoEWW9wKrcxslPwAAAAACAAAAAAADZgAAwAAAABAAAABWlYVeCfEdOUxqyeFnI8szAAAAAASAAACgAAAAEAAAAL6boxHry2OIxuqW9NxyoB0YAAAA7lvLl2gCYIfpFHzM+rIupFrBaYSMK1xqFAAAAAGTFH4VjCKFr1SAn34k55rCCG/f</EncryptedPassword>
-    <_PublishTargetUrl>ftp://u0721039.plsk.regruhosting.ru/LoginetTestAPI.aydardev.ru</_PublishTargetUrl>
+    <_PublishTargetUrl>ftp://u0721039.plsk.regruhosting.ru/aydardev.ru</_PublishTargetUrl>
   </PropertyGroup>
   <ItemGroup>
     <File Include="appsettings.Development.json">
@@ -20,16 +20,16 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>06/07/2018 00:27:02</publishTime>
     </File>
     <File Include="LoginetWebAPI.deps.json">
-      <publishTime>05/16/2019 12:06:08</publishTime>
+      <publishTime>05/16/2019 18:37:33</publishTime>
     </File>
     <File Include="LoginetWebAPI.dll">
-      <publishTime>05/16/2019 12:06:06</publishTime>
+      <publishTime>05/16/2019 18:08:22</publishTime>
     </File>
     <File Include="LoginetWebAPI.pdb">
-      <publishTime>05/16/2019 12:06:06</publishTime>
+      <publishTime>05/16/2019 18:08:22</publishTime>
     </File>
     <File Include="LoginetWebAPI.runtimeconfig.json">
-      <publishTime>05/16/2019 12:06:08</publishTime>
+      <publishTime>05/16/2019 18:37:34</publishTime>
     </File>
     <File Include="Microsoft.AspNetCore.Mvc.Abstractions.dll">
       <publishTime>09/20/2018 15:08:28</publishTime>
@@ -146,7 +146,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>09/18/2018 19:38:10</publishTime>
     </File>
     <File Include="web.config">
-      <publishTime>05/16/2019 12:06:08</publishTime>
+      <publishTime>05/16/2019 18:37:34</publishTime>
     </File>
   </ItemGroup>
 </Project>

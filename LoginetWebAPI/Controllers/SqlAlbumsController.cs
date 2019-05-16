@@ -9,13 +9,13 @@ using LoginetWebAPI.Models;
 
 namespace LoginetWebAPI.Controllers
 {
-    [Route("[controller]/[action]")]
+    [Route("loginetapi/[controller]/[action]")]
     [ApiController]
-    public class AlbumsController : ControllerBase
+    public class SqlAlbumsController : ControllerBase
     {
         private readonly IDataContext _dataContext;
 
-        public AlbumsController(IDataContext dataContext)
+        public SqlAlbumsController(DBRepository dataContext)
         {
             _dataContext = dataContext;
         }
@@ -35,14 +35,14 @@ namespace LoginetWebAPI.Controllers
                 AlbumName = a.AlbumName,
                 Description = a.Description
             }).ToList();
-    
+
             if (albumsModel == null | albumsModel.Count() == 0)
                 return NotFound();
 
             return Ok(albumsModel);
         }
 
-        
+
         [HttpGet("{id}")]
         [FormatFilter]
         public IActionResult Get(int id)
