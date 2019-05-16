@@ -1,0 +1,14 @@
+D:\Projects\ASP.NET CORE\LoginetWebAPI\LoginetWebAPI\bin\Release\netcoreapp2.1\LoginetWebAPI.deps.json
+D:\Projects\ASP.NET CORE\LoginetWebAPI\LoginetWebAPI\bin\Release\netcoreapp2.1\LoginetWebAPI.runtimeconfig.json
+D:\Projects\ASP.NET CORE\LoginetWebAPI\LoginetWebAPI\bin\Release\netcoreapp2.1\LoginetWebAPI.runtimeconfig.dev.json
+D:\Projects\ASP.NET CORE\LoginetWebAPI\LoginetWebAPI\bin\Release\netcoreapp2.1\LoginetWebAPI.dll
+D:\Projects\ASP.NET CORE\LoginetWebAPI\LoginetWebAPI\bin\Release\netcoreapp2.1\LoginetWebAPI.pdb
+D:\Projects\ASP.NET CORE\LoginetWebAPI\LoginetWebAPI\obj\Release\netcoreapp2.1\LoginetWebAPI.csprojAssemblyReference.cache
+D:\Projects\ASP.NET CORE\LoginetWebAPI\LoginetWebAPI\obj\Release\netcoreapp2.1\LoginetWebAPI.csproj.CoreCompileInputs.cache
+D:\Projects\ASP.NET CORE\LoginetWebAPI\LoginetWebAPI\obj\Release\netcoreapp2.1\LoginetWebAPI.RazorAssemblyInfo.cache
+D:\Projects\ASP.NET CORE\LoginetWebAPI\LoginetWebAPI\obj\Release\netcoreapp2.1\LoginetWebAPI.RazorAssemblyInfo.cs
+D:\Projects\ASP.NET CORE\LoginetWebAPI\LoginetWebAPI\obj\Release\netcoreapp2.1\LoginetWebAPI.AssemblyInfoInputs.cache
+D:\Projects\ASP.NET CORE\LoginetWebAPI\LoginetWebAPI\obj\Release\netcoreapp2.1\LoginetWebAPI.AssemblyInfo.cs
+D:\Projects\ASP.NET CORE\LoginetWebAPI\LoginetWebAPI\obj\Release\netcoreapp2.1\LoginetWebAPI.RazorTargetAssemblyInfo.cache
+D:\Projects\ASP.NET CORE\LoginetWebAPI\LoginetWebAPI\obj\Release\netcoreapp2.1\LoginetWebAPI.dll
+D:\Projects\ASP.NET CORE\LoginetWebAPI\LoginetWebAPI\obj\Release\netcoreapp2.1\LoginetWebAPI.pdb

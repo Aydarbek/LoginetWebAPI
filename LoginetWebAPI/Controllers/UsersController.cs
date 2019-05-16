@@ -13,7 +13,7 @@ namespace LoginetWebAPI.Controllers
     [ApiController]
     public class UsersController : ControllerBase
     {
-        private readonly IDataContext _dataContext;
+        private IDataContext _dataContext;
 
         public UsersController(IDataContext dataContext)
         {
